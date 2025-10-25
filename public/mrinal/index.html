@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquaculture Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        @keyframes scroll-down { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(10px); } }
+        .animate-scroll-down { animation: scroll-down 1.5s infinite; }
+        @keyframes fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fade-in 0.8s ease-out; }
+        @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { animation: marquee 40s linear infinite; }
+        .group-hover\:pause-animation:hover .animate-marquee, .animate-marquee:hover { animation-play-state: paused; }
+    </style>
+</head>
+<body class="text-white bg-[#062140]">
+
+    <main class="min-h-screen grid grid-cols-1 lg:grid-cols-2 items-center gap-8 p-8 lg:p-16 bg-gradient-to-br from-[#0a2a4e] via-[#0b3b6f] to-[#0a2a4e] relative overflow-hidden">
+        
+        <div class="flex flex-col justify-center text-left z-10 animate-fade-in">
+            
+            <div class="mb-6">
+                <div class="flex items-center gap-4 mb-4">
+                    <img src="iith-logo.png" alt="IIT Hyderabad Logo" class="h-10 w-auto brightness-0 invert opacity-75">
+                    <img src="astram-logo.png" alt="Astram Logo" class="h-25 w-auto brightness-0 invert opacity-75">
+                </div>
+                <span class="inline-block bg-white/10 text-xs font-semibold px-4 py-1 rounded-full w-fit">
+                    Powered by Astram
+                </span>
+            </div>
+
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight"> 
+                Seamless Intelligence for <br>
+                <span class="text-cyan-300">Aquaculture</span>
+            </h1>
+
+            <p class="mt-6 text-xl text-gray-300 max-w-lg"> 
+                The world's first biomimetic, non-invasive, AI-driven sensor-fusion platform for comprehensive aquaculture health monitoring
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                <a href="#unlocking-future" class="flex items-center justify-center gap-2 bg-cyan-400 text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-cyan-300 transition-colors duration-300">
+                    Mrinal's Impact <span>&rarr;</span>
+                </a>
+                
+                <a href="#control-interface" class="border border-white/50 text-white font-semibold py-3 px-6 rounded-lg hover:bg-white/10 transition-colors duration-300 text-center">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center h-full relative z-10 border border-white/50 rounded-lg p-2 lg:h-[70vh] lg:max-w-xl mx-auto">
+             <img src="image_3903f7.gif" alt="AI powered fish monitoring" class="w-full h-full object-contain rounded">
+
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+            <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
+                <span class="w-1 h-2 bg-white rounded-full block animate-scroll-down"></span>
+            </div>
+        </div>
+
+        </main>
+
+    <section class="py-16 lg:py-24 bg-blue-50 text-gray-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">
+                    Why Mrinal? <span class="text-blue-600">The Urgent Need</span>
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                    The global aquaculture industry, a vital source of protein, is increasingly threatened by widespread disease, environmental stress, and significant economic losses. Current monitoring methods are inherently flawed – they are often invasive, reactive, and incapable of providing the real-time, comprehensive data needed for effective management. This leads to costly interventions, reduced yields, and unsustainable practices. Mrinal addresses these critical challenges head-on.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] hover:-translate-y-1">
+                    <div class="relative w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <span class="absolute -inset-1 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl blur-lg opacity-60"></span>
+                        <svg class="w-8 h-8 text-white relative z-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Delayed Disease Identification</h3>
+                    <p class="text-gray-600 leading-relaxed">A significant delay in disease identification in the Indian aquaculture market results in substantial financial losses, reaching hundreds of millions of dollars annually, along with severe impacts on production volume and employment.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] hover:-translate-y-1">
+                    <div class="relative w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <span class="absolute -inset-1 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl blur-lg opacity-60"></span>
+                        <svg class="w-8 h-8 text-white relative z-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9A2.25 2.25 0 0 0 13.5 5.25h-9A2.25 2.25 0 0 0 2.25 7.5v9A2.25 2.25 0 0 0 4.5 18.75Z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fixed Cameras and Probes</h3>
+                    <p class="text-gray-600 leading-relaxed">Stationary cameras provide limited visual coverage of specific zones. Water quality probes offer essential data (pH, O2, Temp), but do not assess individual fish health, leading to incomplete insights.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] hover:-translate-y-1">
+                    <div class="relative w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <span class="absolute -inset-1 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl blur-lg opacity-60"></span>
+                        <svg class="w-8 h-8 text-white relative z-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Basic Acoustic Feeders</h3>
+                    <p class="text-gray-600 leading-relaxed">Utilizes simple acoustic signals to estimate general fish feeding activity. Offers very basic operational data but lacks specificity for individual fish health, distress, or behavior.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-24 bg-white text-gray-800">
+        <div class="container mx-auto px-6 lg:px-8 text-center mb-12">
+             <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Prevailing currents</h2>
+        </div>
+        <div class="w-full overflow-hidden relative group-hover:pause-animation">
+            <div class="absolute top-0 bottom-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div class="absolute top-0 bottom-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+            <div class="flex animate-marquee">
+                <div class="flex-shrink-0 flex items-center justify-around space-x-8">
+                    <a href="..." target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-5 rounded-xl shadow-lg border border-gray-100 w-96 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <img src="the-hindu-logo.png" alt="The Hindu Logo" class="h-10 w-auto mr-4 flex-shrink-0">
+                        <div><span class="text-sm font-semibold text-gray-500 block">The Hindu</span><p class="text-base font-semibold text-gray-800 leading-tight">Commercially produced vaccines for imported fish in a year: ICAR official</p></div>
+                    </a>
+                    <a href="..." target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-5 rounded-xl shadow-lg border border-gray-100 w-96 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                         <img src="toi-logo.png" alt="Times of India Logo" class="h-10 w-auto mr-4 flex-shrink-0">
+                        <div><span class="text-sm font-semibold text-gray-500 block">Times of India</span><p class="text-base font-semibold text-gray-800 leading-tight">'Facing diseases year after year': Andhra Pradesh faces aquaculture crisis</p></div>
+                    </a>
+                    <a href="..." target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-5 rounded-xl shadow-lg border border-gray-100 w-96 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                         <img src="toi-logo.png" alt="Times of India Logo" class="h-10 w-auto mr-4 flex-shrink-0">
+                        <div><span class="text-sm font-semibold text-gray-500 block">Times of India</span><p class="text-base font-semibold text-gray-800 leading-tight">Murrel fish farming fails to rescue aqua farmers after shrimp losses</p></div>
+                    </a>
+                    <a href="..." target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-5 rounded-xl shadow-lg border border-gray-100 w-96 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                         <img src="toi-logo.png" alt="Times of India Logo" class="h-10 w-auto mr-4 flex-shrink-0">
+                        <div><span class="text-sm font-semibold text-gray-500 block">Times of India</span><p class="text-base font-semibold text-gray-800 leading-tight">Shrimp export crisis: CM says Rs 25,000 cr loss due to US tariffs cause</p></div>
+                    </a>
+                </div>
+                <div class="flex-shrink-0 flex items-center justify-around space-x-8" aria-hidden="true">
+                     <a href="..." target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-5 rounded-xl shadow-lg border border-gray-100 w-96 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <img src="the-hindu-logo.png" alt="The Hindu Logo" class="h-10 w-auto mr-4 flex-shrink-0">
+                        <div><span class="text-sm font-semibold text-gray-500 block">The Hindu</span><p class="text-base font-semibold text-gray-800 leading-tight">Commercially produced vaccines for imported fish in a year: ICAR official</p></div>
+                    </a>
+                    <a href="..." target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-5 rounded-xl shadow-lg border border-gray-100 w-96 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <img src="toi-logo.png" alt="Times of India Logo" class="h-10 w-auto mr-4 flex-shrink-0">
+                        <div><span class="text-sm font-semibold text-gray-500 block">Times of India</span><p class="text-base font-semibold text-gray-800 leading-tight">'Facing diseases year after year': Andhra Pradesh faces aquaculture crisis</p></div>
+                    </a>
+                    <a href="..." target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-5 rounded-xl shadow-lg border border-gray-100 w-96 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <img src="toi-logo.png" alt="Times of India Logo" class="h-10 w-auto mr-4 flex-shrink-0">
+                        <div><span class="text-sm font-semibold text-gray-500 block">Times of India</span><p class="text-base font-semibold text-gray-800 leading-tight">Murrel fish farming fails to rescue aqua farmers after shrimp losses</p></div>
+                    </a>
+                    <a href="..." target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-5 rounded-xl shadow-lg border border-gray-100 w-96 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <img src="toi-logo.png" alt="Times of India Logo" class="h-10 w-auto mr-4 flex-shrink-0">
+                        <div><span class="text-sm font-semibold text-gray-500 block">Times of India</span><p class="text-base font-semibold text-gray-800 leading-tight">Shrimp export crisis: CM says Rs 25,000 cr loss due to US tariffs cause</p></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="unlocking-future" class="py-16 lg:py-24 bg-blue-50 text-gray-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Unlocking Aquaculture's Future</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Astram's Mrinal is not just a monitoring device; it's a revolutionary biomimetic robotic fish designed to seamlessly integrate into any aquatic environment. By harmonizing with nature while employing cutting-edge technology, Mrinal provides unprecedented, proactive insights into aquaculture health and operations.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"> 
+                 <div class="flex justify-center">
+    <img src="mrinal-feature-main.png" alt="Mrinal main feature" class="w-full max-w-2xl aspect-square object-cover rounded-lg shadow-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,189,248,0.5)]">
+</div>
+
+                <div class="flex flex-col gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Z" /></svg></div>
+                        <div><h3 class="text-xl font-bold text-gray-900 mb-2">Inspired by Nature the Biomimetic Design</h3><p class="text-gray-600 leading-relaxed">Mrinal's design mimics the natural movement and appearance of fish, allowing it to seamlessly integrate into aquatic environments without causing stress or disruption to the ecosystem. This non-invasive approach ensures accurate data collection without altering fish behavior.</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.174C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.174 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.04l-.821 1.316Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" /></svg></div>
+                        <div><h3 class="text-xl font-bold text-gray-900 mb-2">Real-time Visual Sensing</h3><p class="text-gray-600 leading-relaxed">Equipped with high-resolution cameras, Mrinal captures clear, real-time video footage of fish behavior, feeding patterns, and physical health. This visual data is crucial for early detection of anomalies and precise health assessments.</p></div>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856a8.25 8.25 0 0 1 13.788 0M1.923 8.675a12 12 0 0 1 20.154 0M12 18.375h.008v.008H12v-.008Z" /></svg></div>
+                        <div><h3 class="text-xl font-bold text-gray-900 mb-2">Advanced Acoustic Monitoring</h3><p class="text-gray-600 leading-relaxed">Integrated hydrophones enable Mrinal to monitor underwater sounds, providing insights into fish vocalizations, feeding sounds, and signs of distress. This acoustic data complements visual observations for a holistic understanding of fish well-being.</p></div>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5 0-4.5 16.5" /></svg></div>
+                        <div><h3 class="text-xl font-bold text-gray-900 mb-2">Intelligent AI-Powered Analysis</h3><p class="text-gray-600 leading-relaxed">Mrinal leverages advanced AI and machine learning algorithms to process vast amounts of data, identifying subtle changes in behavior, detecting early signs of disease, and optimizing feeding strategies for maximum efficiency and fish health.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-24 bg-blue-50 text-gray-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Precision Engineering <span class="text-blue-600"> for Every Operation</span></h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Mrinal is engineered with adaptability and precision at its core, offering tailored solutions that integrate seamlessly into diverse aquaculture operations. Discover the versions designed to meet your specific needs, from robust tethered systems for controlled environments to advanced standalone units for expansive and dynamic settings.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-cyan-400 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] hover:-translate-y-1">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center gap-4"><div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center shadow-lg"><svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9" /></svg></div><div><h3 class="text-2xl font-bold text-gray-900">Mrinal VT 1.0</h3><p class="text-lg text-gray-500">Tethered System</p></div></div>
+                            <span class="flex-shrink-0 bg-cyan-100 text-cyan-800 text-sm font-semibold px-4 py-1 rounded-full">Operational</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">Designed for precise and continuous monitoring in controlled aquaculture environments. The tethered system ensures stable power delivery and high-bandwidth data transmission, ideal for intensive farming operations.</p>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Key Features</h4>
+                        <ul class="space-y-2 mb-8 list-disc list-inside text-gray-600">
+                            <li>Continuous power supply for uninterrupted operation.</li>
+                            <li>High-speed data transfer for real-time analytics.</li>
+                            <li>Robust communication link for reliable control.</li>
+                            <li>Ideal for tanks, raceways, and smaller ponds.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-gradient-to-br from-blue-500 to-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:from-blue-600 hover:to-blue-800 transition-colors duration-300">
+                            Inquire Now <span>&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center gap-4"><div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg"><svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856a8.25 8.25 0 0 1 13.788 0M1.923 8.675a12 12 0 0 1 20.154 0M12 18.375h.008v.008H12v-.008Z" /></svg></div><div><h3 class="text-2xl font-bold text-gray-900">Mrinal VSA 1.0</h3><p class="text-lg text-gray-500">Standalone System</p></div></div>
+                            <span class="flex-shrink-0 bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-1 rounded-full">In Development</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">The next evolution, Mrinal 2.0, operates independently, offering unmatched flexibility and reach across vast aquaculture sites. This untethered system incorporates advanced power management and wireless communication for extended missions.</p>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Key Features</h4>
+                        <ul class="space-y-2 mb-8 list-disc list-inside text-gray-600">
+                            <li>Self-sustained power with long-duration batteries.</li>
+                            <li>Wireless data transmission for wide area coverage.</li>
+                            <li>Advanced navigation and obstacle avoidance.</li>
+                            <li>Suitable for large ponds, lakes, and open-water cages.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="#contact" class="inline-flex items-center justify-center gap-2 border border-blue-600 text-blue-600 font-semibold py-3 px-6 rounded-lg hover:bg-blue-50 transition-colors duration-300">
+                            Inquire Now <span>&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="control-interface" class="py-16 lg:py-24 bg-white text-gray-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Intelligent <span class="text-blue-600">Control Interface</span></h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-xl mx-auto">Our intuitive GUI platform transforms complex sensor data into actionable insights, providing aquaculture operators with unparalleled control and visibility over their entire farm. Manage Mrinal, analyze data, and make informed decisions with ease.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9A2.25 2.25 0 0 0 13.5 5.25h-9A2.25 2.25 0 0 0 2.25 7.5v9A2.25 2.25 0 0 0 4.5 18.75Z" /></svg></div>
+                        <div><h3 class="text-xl font-bold text-gray-900 mb-2">Real-time Video Streaming</h3><p class="text-gray-600 leading-relaxed">Access live video feeds from Mrinal's cameras, allowing visual inspection of fish and the environment at any time, from anywhere.</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5 0-4.5 16.5" /></svg></div>
+                        <div><h3 class="text-xl font-bold text-gray-900 mb-2">AI Detection Overlay</h3><p class="text-gray-600 leading-relaxed">Visual overlays highlight AI-detected anomalies such as disease symptoms, unusual behavior, or changes in water quality directly on the video feed.</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-2 border-cyan-400 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V5.25A2.25 2.25 0 0 0 18 3H6A2.25 2.25 0 0 0 3.75 5.25v12.75A2.25 2.25 0 0 0 6 20.25Z" /></svg></div>
+                        <div><h3 class="text-xl font-bold text-gray-900 mb-2">Analytics Dashboard</h3><p class="text-gray-600 leading-relaxed">A comprehensive dashboard presents key metrics, trends, and health indicators in an easy-to-understand format, facilitating quick decision-making.</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.017 5.454 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" /></svg></div>
+                        <div><h3 class="text-xl font-bold text-gray-900 mb-2">Intelligent Alerts</h3><p class="text-gray-600 leading-relaxed">Receive instant notifications for critical events, such as disease outbreaks, abnormal water parameters, or equipment malfunctions, directly to your device.</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" /></svg></div>
+                        <div><h3 class="text-xl font-bold text-gray-900 mb-2">Historical Data Access</h3><p class="text-gray-600 leading-relaxed">Review past data and performance trends to identify long-term patterns, evaluate the effectiveness of interventions, and optimize future strategies.</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75A2.25 2.25 0 0 0 15.75 1.5m-7.5 0h7.5m-7.5 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V2.625c0-.621-.504-1.125-1.125-1.125H10.5" /></svg></div>
+                        <div><h3 class="text-xl font-bold text-gray-900 mb-2">Web & Mobile Access</h3><p class="text-gray-600 leading-relaxed">Manage your aquaculture operations from anywhere with a responsive interface accessible via web browsers and dedicated mobile applications.</p></div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+    <img src="gui-main.png" alt="Control interface main" class="w-full max-w-2xl aspect-square object-cover rounded-lg shadow-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,189,248,0.5)]">
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-24 bg-blue-50 text-gray-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Future <span class="text-cyan-500">Roadmap</span></h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Our vision extends beyond today's capabilities—pioneering the next generation of aquaculture intelligence. We are continuously innovating to bring more advanced features and broader applications to Mrinal, ensuring you stay at the forefront of sustainable and efficient aquaculture.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.63 2.18a14.98 14.98 0 0 0-12.12 6.16.98.98 0 0 0 1.04 1.04l5.85-.89m7.48 2.01v4.8m-5.84-7.38h-4.8m16.5 1.01a14.98 14.98 0 0 1-6.16 12.12 14.98 14.98 0 0 1-12.12-6.16" /></svg></div>
+                    <div><h3 class="text-xl font-bold text-gray-900 mb-2">Enhanced AI Capabilities</h3><span class="inline-block bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full mb-3"></span><p class="text-gray-600 leading-relaxed">Further development of AI models for even more precise disease detection, behavioral analysis, and predictive analytics, offering unparalleled foresight.</p></div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-2 border-cyan-400 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 1.085-1.085-1.085m1.085 0L12 17.585l1.085-1.085m0 0h2.25m-7.5 0h-2.25M12 3v11.25m0 0a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25m10.5 0a2.25 2.25 0 0 0 2.25 2.25h2.25a2.25 2.25 0 0 0 2.25-2.25" /></svg></div>
+                    <div><h3 class="text-xl font-bold text-gray-900 mb-2">Swarm Intelligence</h3><span class="inline-block bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full mb-3"></span><p class="text-gray-600 leading-relaxed">Integration of multiple Mrinal units working in concert, forming an intelligent swarm for even broader coverage and more detailed data collection across large areas.</p></div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c.48 0 .947-.02 1.408-.057M12 21c-.48 0-.947-.02-1.408-.057m11.124-6.198A9 9 0 1 0 2.876 14.802" /></svg></div>
+                    <div><h3 class="text-xl font-bold text-gray-900 mb-2">Global Expansion</h3><span class="inline-block bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full mb-3"></span><p class="text-gray-600 leading-relaxed">Expanding Mrinal's reach to international markets, tailoring solutions to meet diverse regional aquaculture needs and environmental conditions.</p></div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start gap-5 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-1.718-.42-3.322-1.155-4.742a.46.46 0 0 0-.69 0c-.734 1.42-1.154 3.024-1.154 4.742M12 6.087v1.666m0 0c-1.344 0-2.59.3-3.686.834a.488.488 0 0 1-.533 0c-1.097-.534-2.342-.834-3.686-.834v1.666c1.344 0 2.59.3 3.686.834a.488.488 0 0 1 .533 0c1.097-.534 2.342-.834 3.686-.834M12 6.087c-1.344 0-2.59.3-3.686.834a.488.488 0 0 1-.533 0c-1.097-.534-2.342-.834-3.686-.834m7.372 0c1.344 0 2.59.3 3.686.834a.488.488 0 0 0 .533 0c1.097-.534 2.342-.834 3.686-.834v1.666c-1.344 0-2.59-.3-3.686-.834a.488.488 0 0 0-.533 0c1.097-.534 2.342-.834 3.686-.834m0 1.666v1.666m0 0c-1.344 0-2.59.3-3.686.834a.488.488 0 0 1-.533 0c-1.097-.534-2.342-.834-3.686-.834v1.666c1.344 0 2.59.3 3.686.834a.488.488 0 0 1 .533 0c1.097-.534 2.342-.834 3.686-.834m-7.372-1.666v1.666m0 0c-1.344 0-2.59.3-3.686.834a.488.488 0 0 1-.533 0c-1.097-.534-2.342-.834-3.686-.834M4.125 12v6.875A2.625 2.625 0 0 0 6.75 21.5h10.5A2.625 2.625 0 0 0 19.875 18.875V12M4.125 12h15.75" /></svg></div>
+                    <div><h3 class="text-xl font-bold text-gray-900 mb-2">Design Optimization</h3><span class="inline-block bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full mb-3"></span><p class="text-gray-600 leading-relaxed">Optimizing our design to be both flexible and more robust, ensuring reliable performance across all atmospheric conditions and in shrimp environments..</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 lg:py-24 bg-white text-gray-800"> 
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Let's Shape the Future of<br><span class="text-cyan-500">Aquaculture Together</span></h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-xl mx-auto">Whether you're an investor, aquaculture operator, or research partner—we'd love to hear from you. Join us in revolutionizing the industry with intelligent, sustainable solutions.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"> 
+                <a href="mailto:himabindu.allaka@mae.ac.in" class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] hover:-translate-y-1">
+                    <div class="relative w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center mb-5 shadow-lg"><span class="absolute -inset-1 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl blur-lg opacity-60"></span><svg class="w-8 h-8 text-white relative z-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Email</h3><p class="text-blue-600 font-medium">himabindu.allaka@mae.ac.in</p> 
+                </a>
+                <a href="tel:+15551234567" class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] hover:-translate-y-1">
+                    <div class="relative w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center mb-5 shadow-lg"><span class="absolute -inset-1 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl blur-lg opacity-60"></span><svg class="w-8 h-8 text-white relative z-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.211-.998-.552-1.347l-5.26-4.499a1.125 1.125 0 0 0-1.573.187l-1.533 1.916a11.2 11.2 0 0 1-5.52-5.52l1.916-1.533a1.125 1.125 0 0 0 .187-1.573l-4.499-5.26A1.125 1.125 0 0 0 4.622 1.5H3.375c-1.24 0-2.25 1.01-2.25 2.25Z" /></svg></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Phone</h3><p class="text-blue-600 font-medium">+91 90007 33709</p>
+                </a>
+                <a href="#" class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] hover:-translate-y-1">
+                    <div class="relative w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center mb-5 shadow-lg"><span class="absolute -inset-1 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl blur-lg opacity-60"></span><svg class="w-8 h-8 text-white relative z-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Location</h3><p class="text-blue-600 font-medium">Academic Block, C – 206 Mechanical and Aerospace Engineering, Indian Institute of Technology, Hyderabad, Sangareddy, 502284</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#0a2a4e] text-gray-400 py-12">
+        <div class="container mx-auto px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Astram Technologies. All rights reserved.</p>
+            <p class="text-sm mt-2">Pioneering the future of sustainable aquaculture.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
