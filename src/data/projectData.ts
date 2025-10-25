@@ -47,8 +47,9 @@ export const projectData: ProjectDataMap = {
         title: "MRINAL – Modular Robotic Intelligent Navigator for Aquatic Life",
         image: "/lovable-uploads/mrinal-rov.jpg",
         description: "Bio-inspired propulsion with gentle motion safe for aquatic livestock, pH, DO, and feed dispersion monitoring, corrosion-resistant body for long-duration usage",
-        progress: 5,
-        publications: ["Marine Biology Engineering"]
+        progress: 92,
+        publications: ["Marine Biology Engineering"],
+        link: "https://www.astramlabiith.in/mrinal/"
       },
       {
         title: "DVAYAM – Dual-Domain Vehicle for Aquatic and Aerial Mobility",

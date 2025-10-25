@@ -12,6 +12,7 @@ export interface Project {
   description: string;
   progress: number;
   publications: string[];
+  link?: string;
 }
 
 export interface ProjectData {

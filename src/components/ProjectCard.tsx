@@ -1,5 +1,7 @@
 import React from 'react';
 import { Project } from '../types/projects';
+import { Button } from './ui/button';
+import { ArrowRight } from 'lucide-react';
 interface ProjectCardProps {
   project: Project;
   index: number;
@@ -44,6 +46,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               </span>)}
           </div>
         </div>
+
+        {/* Learn More Button */}
+        {project.link && (
+          <div className="mt-4">
+            <Button 
+              variant="default" 
+              size="sm"
+              className="w-full sm:w-auto group"
+              onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
+            >
+              Learn More
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </div>
+        )}
       </div>
     </div>;
 };
