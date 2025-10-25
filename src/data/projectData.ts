@@ -45,7 +45,7 @@ export const projectData: ProjectDataMap = {
       },
       {
         title: "MRINAL – Modular Robotic Intelligent Navigator for Aquatic Life",
-        image: "/lovable-uploads/f8ed0830-6867-44a8-b26a-6dbd40b8906e.png",
+        image: "/lovable-uploads/mrinal-rov.jpg",
         description: "Bio-inspired propulsion with gentle motion safe for aquatic livestock, pH, DO, and feed dispersion monitoring, corrosion-resistant body for long-duration usage",
         progress: 5,
         publications: ["Marine Biology Engineering"]
