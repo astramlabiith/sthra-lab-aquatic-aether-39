@@ -10,7 +10,6 @@ import Projects from "./pages/Projects";
 import Publications from "./pages/Publications";
 import Awards from "./pages/Awards";
 import Courses from "./pages/Courses";
-import Gallery from "./pages/Gallery";
 import JoinUs from "./pages/JoinUs";
 import NotFound from "./pages/NotFound";
 
@@ -29,7 +28,6 @@ const App = () => (
           <Route path="/publications" element={<Publications />} />
           <Route path="/awards" element={<Awards />} />
           <Route path="/courses" element={<Courses />} />
-          <Route path="/gallery" element={<Gallery />} />
           <Route path="/join-us" element={<JoinUs />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
