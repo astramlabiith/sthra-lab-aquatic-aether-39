@@ -64,6 +64,15 @@ const Publications = () => {
       abstract: "This paper presents a system that uses vision to adjust the speed of autonomous planing crafts. The goal is to improve their stability and performance in various sea conditions.",
       doi: "IEEE Conference Proceedings",
       pdfLink: "https://ieeexplore.ieee.org/abstract/document/8555758"
+    },
+    {
+      title: "Resilient Navigation for UAVs: GNSS Attack Detection and Seamless Transition to Visual-Inertial Localization",
+      authors: "Sainath Reddy Akkala, Dr. Himabindu Allaka",
+      venue: "2025 IEEE INDICON",
+      year: "2025",
+      abstract: "This paper introduces a regenerative navigation framework designed to protect autonomous drones from malicious signal interference. The system utilizes a state-machine architecture that cross-references satellite data with inertial dynamics to identify spoofing and jamming attempts. Once an anomaly is confirmed, the framework autonomously decouples the compromised signals and shifts control to a map-aided visual-inertial navigation stack. This approach ensures mission continuity and operational safety in contested or signal-denied environments by maintaining a robust reference for flight behavior.",
+      doi: "2025 IEEE INDICON",
+      pdfLink: "https://ieeexplore.ieee.org/document/11392970"
     }
   ];
 
