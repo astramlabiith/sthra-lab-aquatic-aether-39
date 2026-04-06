@@ -72,7 +72,7 @@ export const projectData: ProjectDataMap = {
       },
       {
         title: "SURAKSHA – Surveillance USV for Harbor and Border Security",
-        image: "/lovable-uploads/acb63335-5d45-4ddc-8556-2002d7e6a226.png",
+        image: "/lovable-uploads/suraksha-usv.png",
         description: "Surveillance and patrolling in harbor regions via remote/autonomous modes with vision and radar-based anomaly & intrusion detection, operates under all visibility conditions with integrated data relay to control station",
         progress: 75,
         publications: ["Ocean Engineering", "Autonomous Robots"]
