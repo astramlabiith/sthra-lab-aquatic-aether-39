@@ -81,9 +81,9 @@ const Gallery = () => {
                       loading="lazy"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10 transition-opacity" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <h3 className="text-xl font-bold mb-1">{album.title}</h3>
+                    <h3 className="text-xl font-bold mb-1 text-white drop-shadow-lg">{album.title}</h3>
                     {album.album_date && (
                       <p className="text-sm text-white/80">
                         {format(new Date(album.album_date), 'MMMM d, yyyy')}
