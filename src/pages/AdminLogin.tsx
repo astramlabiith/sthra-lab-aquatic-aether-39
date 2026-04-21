@@ -9,12 +9,14 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from '@/hooks/use-toast';
 
+const ADMIN_USERNAME = 'astramlab';
+const ADMIN_EMAIL = 'astramlab@astram.lab';
+
 const AdminLogin = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [mode, setMode] = useState<'login' | 'signup'>('login');
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -30,23 +32,19 @@ const AdminLogin = () => {
     e.preventDefault();
     setLoading(true);
 
-    if (mode === 'signup') {
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: { emailRedirectTo: `${window.location.origin}/admin/gallery` },
-      });
-      if (error) {
-        toast({ title: 'Sign up failed', description: error.message, variant: 'destructive' });
-      } else {
-        toast({ title: 'Account created', description: 'You can now log in.' });
-        setMode('login');
-      }
-    } else {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-      if (error) {
-        toast({ title: 'Login failed', description: error.message, variant: 'destructive' });
-      }
+    if (username.trim().toLowerCase() !== ADMIN_USERNAME) {
+      toast({ title: 'Login failed', description: 'Invalid username or password.', variant: 'destructive' });
+      setLoading(false);
+      return;
+    }
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email: ADMIN_EMAIL,
+      password,
+    });
+
+    if (error) {
+      toast({ title: 'Login failed', description: 'Invalid username or password.', variant: 'destructive' });
     }
     setLoading(false);
   };
@@ -57,22 +55,19 @@ const AdminLogin = () => {
       <main className="flex-1 flex items-center justify-center pt-28 pb-20 px-6">
         <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle>Admin {mode === 'login' ? 'Login' : 'Sign Up'}</CardTitle>
-            <CardDescription>
-              {mode === 'login'
-                ? 'Sign in to manage the gallery.'
-                : 'Create the admin account (use this only once).'}
-            </CardDescription>
+            <CardTitle>Admin Login</CardTitle>
+            <CardDescription>Sign in to manage the gallery.</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="username">Username</Label>
                 <Input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  id="username"
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  autoComplete="username"
                   required
                 />
               </div>
@@ -83,22 +78,13 @@ const AdminLogin = () => {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="current-password"
                   required
-                  minLength={6}
                 />
               </div>
               <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? 'Please wait...' : mode === 'login' ? 'Login' : 'Sign Up'}
+                {loading ? 'Please wait...' : 'Login'}
               </Button>
-              <button
-                type="button"
-                onClick={() => setMode(mode === 'login' ? 'signup' : 'login')}
-                className="w-full text-sm text-blue-600 hover:underline"
-              >
-                {mode === 'login'
-                  ? "Don't have an account? Sign up"
-                  : 'Already have an account? Log in'}
-              </button>
             </form>
           </CardContent>
         </Card>
