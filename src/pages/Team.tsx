@@ -37,11 +37,11 @@ const Team = () => {
   }];
   const interns = [{
     name: "AKKALA SAINATH REDDY",
-    specialization: "Project GATI",
+    specialization: "Project MRINAL",
     email: "sainathreddyakkala@gmail.com",
     linkedin: "https://www.linkedin.com/in/sainathreddyakkala/",
     image: "/lovable-uploads/d498b892-a513-491f-ad6e-68b63b3516d2.png",
-    shortBio: "Working on GPS-Denied Aerial Drone for Indoor/Outdoor Navigation with Visual-SLAM technology"
+    shortBio: "Working on Modular Robotic Intelligent Navigator for Aquatic Life with bio-inspired propulsion"
   }, {
     name: "Vaishnavi Kore",
     specialization: "Project GATI",
