@@ -48,6 +48,33 @@ const Publications = () => {
 
   const conferencePapers = [
     {
+      title: "A Multi-Sensor Fusion Framework for Unmanned Aerial Vehicle (UAV) Navigation and Inspection in GPS-Denied and Degraded Environments",
+      authors: "Vuppu Venkata Sai Viswa Kiran, Akkala Sainath Reddy, H. Vishal Sri Sai, Himabindu Allaka, R Prasanth Kumar",
+      venue: "2026 IEEE Applied Sensing Conference (APSCON)",
+      year: "2026",
+      abstract: "This paper, presented at an IEEE conference, discusses a method for a Multi-Sensor Fusion Framework for Unmanned Aerial Vehicle (UAV) Navigation and Inspection in GPS-Denied and Degraded Environments.",
+      doi: "IEEE Conference Proceedings",
+      pdfLink: "#"
+    },
+    {
+      title: "Design and Development of a Cost-Effective Unmanned Surface Vehicle (USV) for Inland Water Quality Assessment",
+      authors: "Dwivedula Narasimha Sri Sourabh, Vinayak Maharshi, M. Balakumaran, Himabindu Allaka",
+      venue: "International and National Conference on Machines and Mechanisms (iNaCoMM), IIT Hyderabad",
+      year: "2025",
+      abstract: "This paper introduces a compact and cost-effective unmanned surface vehicle (USV) designed to automate lake monitoring. The platform is equipped with real-time water quality sensors and a custom water sampling carousel, allowing for automated water collection at preconfigured waypoints without manual intervention.",
+      doi: "IEEE Conference Proceedings",
+      pdfLink: "#"
+    },
+    {
+      title: "Design and Development of a Unmanned Surface Vehicle (USV) for Sludge Quantification and Inland Water Quality Assessment",
+      authors: "Dwivedula Narasimha Sri Sourabh, Vinayak Maharshi, M. Balakumaran, Himabindu Allaka",
+      venue: "2026 IEEE Applied Sensing Conference (APSCON)",
+      year: "2026",
+      abstract: "This study presents LIMUS (Lake Inspection and Monitoring Unmanned Surface Vehicle), a compact USV platform developed to monitor water quality and quantify sludge accumulation. It features in-situ water quality sensors, a custom-built water sampling carousel, and an echosounder that estimates both lake depth and sludge buildup.",
+      doi: "IEEE Conference Proceedings",
+      pdfLink: "#"
+    },
+    {
       title: "Resilient Navigation for UAVs: GNSS Attack Detection and Seamless Transition to Visual-Inertial Localization",
       authors: "Sainath Reddy Akkala, Dr. Himabindu Allaka",
       venue: "2025 IEEE INDICON",
