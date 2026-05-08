@@ -20,10 +20,10 @@ const AdminLogin = () => {
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session) navigate('/admin/gallery');
+      if (session) navigate('/admin/dashboard');
     });
     supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) navigate('/admin/gallery');
+      if (session) navigate('/admin/dashboard');
     });
     return () => subscription.unsubscribe();
   }, [navigate]);

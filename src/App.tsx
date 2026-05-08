@@ -14,6 +14,7 @@ import JoinUs from "./pages/JoinUs";
 import Gallery from "./pages/Gallery";
 import AdminLogin from "./pages/AdminLogin";
 import AdminGallery from "./pages/AdminGallery";
+import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/join-us" element={<JoinUs />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/gallery" element={<AdminGallery />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -79,6 +79,216 @@ export type Database = {
         }
         Relationships: []
       }
+      awards: {
+        Row: {
+          award: string
+          created_at: string
+          description: string | null
+          display_order: number
+          icon: string
+          id: string
+          kind: Database["public"]["Enums"]["award_kind"]
+          organization: string | null
+          recipient: string
+          updated_at: string
+          year: string
+        }
+        Insert: {
+          award: string
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          icon?: string
+          id?: string
+          kind: Database["public"]["Enums"]["award_kind"]
+          organization?: string | null
+          recipient: string
+          updated_at?: string
+          year: string
+        }
+        Update: {
+          award?: string
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          icon?: string
+          id?: string
+          kind?: Database["public"]["Enums"]["award_kind"]
+          organization?: string | null
+          recipient?: string
+          updated_at?: string
+          year?: string
+        }
+        Relationships: []
+      }
+      courses: {
+        Row: {
+          created_at: string
+          description: string | null
+          display_order: number
+          id: string
+          instructor: string | null
+          kind: Database["public"]["Enums"]["course_kind"]
+          semester: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          id?: string
+          instructor?: string | null
+          kind: Database["public"]["Enums"]["course_kind"]
+          semester?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          id?: string
+          instructor?: string | null
+          kind?: Database["public"]["Enums"]["course_kind"]
+          semester?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      publications: {
+        Row: {
+          abstract: string | null
+          authors: string
+          created_at: string
+          display_order: number
+          doi: string | null
+          id: string
+          kind: Database["public"]["Enums"]["publication_kind"]
+          pdf_link: string | null
+          title: string
+          updated_at: string
+          venue: string
+          year: string
+        }
+        Insert: {
+          abstract?: string | null
+          authors: string
+          created_at?: string
+          display_order?: number
+          doi?: string | null
+          id?: string
+          kind: Database["public"]["Enums"]["publication_kind"]
+          pdf_link?: string | null
+          title: string
+          updated_at?: string
+          venue: string
+          year: string
+        }
+        Update: {
+          abstract?: string | null
+          authors?: string
+          created_at?: string
+          display_order?: number
+          doi?: string | null
+          id?: string
+          kind?: Database["public"]["Enums"]["publication_kind"]
+          pdf_link?: string | null
+          title?: string
+          updated_at?: string
+          venue?: string
+          year?: string
+        }
+        Relationships: []
+      }
+      research_grants: {
+        Row: {
+          created_at: string
+          description: string | null
+          display_order: number
+          duration: string | null
+          grant_type: string | null
+          id: string
+          institution: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          duration?: string | null
+          grant_type?: string | null
+          id?: string
+          institution?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          duration?: string | null
+          grant_type?: string | null
+          id?: string
+          institution?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      team_members: {
+        Row: {
+          category: Database["public"]["Enums"]["team_category"]
+          created_at: string
+          display_order: number
+          education: string | null
+          email: string | null
+          full_bio: string | null
+          id: string
+          image_url: string | null
+          linkedin: string | null
+          name: string
+          role: string | null
+          short_bio: string | null
+          specialization: string | null
+          updated_at: string
+        }
+        Insert: {
+          category: Database["public"]["Enums"]["team_category"]
+          created_at?: string
+          display_order?: number
+          education?: string | null
+          email?: string | null
+          full_bio?: string | null
+          id?: string
+          image_url?: string | null
+          linkedin?: string | null
+          name: string
+          role?: string | null
+          short_bio?: string | null
+          specialization?: string | null
+          updated_at?: string
+        }
+        Update: {
+          category?: Database["public"]["Enums"]["team_category"]
+          created_at?: string
+          display_order?: number
+          education?: string | null
+          email?: string | null
+          full_bio?: string | null
+          id?: string
+          image_url?: string | null
+          linkedin?: string | null
+          name?: string
+          role?: string | null
+          short_bio?: string | null
+          specialization?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -87,7 +297,17 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      award_kind: "pi" | "lab"
+      course_kind: "current" | "upcoming"
+      publication_kind: "research" | "conference"
+      team_category:
+        | "pi"
+        | "phd"
+        | "mtech"
+        | "project_staff"
+        | "intern"
+        | "btech"
+        | "alumni"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -214,6 +434,19 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      award_kind: ["pi", "lab"],
+      course_kind: ["current", "upcoming"],
+      publication_kind: ["research", "conference"],
+      team_category: [
+        "pi",
+        "phd",
+        "mtech",
+        "project_staff",
+        "intern",
+        "btech",
+        "alumni",
+      ],
+    },
   },
 } as const
