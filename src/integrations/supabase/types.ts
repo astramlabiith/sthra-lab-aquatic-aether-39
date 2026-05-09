@@ -121,6 +121,48 @@ export type Database = {
         }
         Relationships: []
       }
+      careers: {
+        Row: {
+          apply_email: string | null
+          apply_link: string | null
+          created_at: string
+          description: string | null
+          display_order: number
+          id: string
+          is_open: boolean
+          kind: Database["public"]["Enums"]["career_kind"]
+          requirements: string[]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          apply_email?: string | null
+          apply_link?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          id?: string
+          is_open?: boolean
+          kind: Database["public"]["Enums"]["career_kind"]
+          requirements?: string[]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          apply_email?: string | null
+          apply_link?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          id?: string
+          is_open?: boolean
+          kind?: Database["public"]["Enums"]["career_kind"]
+          requirements?: string[]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       courses: {
         Row: {
           created_at: string
@@ -152,6 +194,72 @@ export type Database = {
           instructor?: string | null
           kind?: Database["public"]["Enums"]["course_kind"]
           semester?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      hero_slides: {
+        Row: {
+          caption: string | null
+          created_at: string
+          display_order: number
+          id: string
+          image_url: string
+        }
+        Insert: {
+          caption?: string | null
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_url: string
+        }
+        Update: {
+          caption?: string | null
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_url?: string
+        }
+        Relationships: []
+      }
+      projects: {
+        Row: {
+          category: Database["public"]["Enums"]["project_category"]
+          created_at: string
+          description: string | null
+          display_order: number
+          id: string
+          image_url: string | null
+          link: string | null
+          progress: number
+          publications: string[]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category: Database["public"]["Enums"]["project_category"]
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          id?: string
+          image_url?: string | null
+          link?: string | null
+          progress?: number
+          publications?: string[]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: Database["public"]["Enums"]["project_category"]
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          id?: string
+          image_url?: string | null
+          link?: string | null
+          progress?: number
+          publications?: string[]
           title?: string
           updated_at?: string
         }
@@ -298,7 +406,15 @@ export type Database = {
     }
     Enums: {
       award_kind: "pi" | "lab"
+      career_kind: "Internship" | "Hiring"
       course_kind: "current" | "upcoming"
+      project_category:
+        | "UAVs"
+        | "AUVs"
+        | "ROVs"
+        | "USVs"
+        | "GNSS"
+        | "Mars Rovers"
       publication_kind: "research" | "conference"
       team_category:
         | "pi"
@@ -436,7 +552,9 @@ export const Constants = {
   public: {
     Enums: {
       award_kind: ["pi", "lab"],
+      career_kind: ["Internship", "Hiring"],
       course_kind: ["current", "upcoming"],
+      project_category: ["UAVs", "AUVs", "ROVs", "USVs", "GNSS", "Mars Rovers"],
       publication_kind: ["research", "conference"],
       team_category: [
         "pi",
