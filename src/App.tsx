@@ -11,6 +11,7 @@ import Publications from "./pages/Publications";
 import Awards from "./pages/Awards";
 import Courses from "./pages/Courses";
 import JoinUs from "./pages/JoinUs";
+import Careers from "./pages/Careers";
 import Gallery from "./pages/Gallery";
 import AdminLogin from "./pages/AdminLogin";
 import AdminGallery from "./pages/AdminGallery";
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/awards" element={<Awards />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/join-us" element={<JoinUs />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />

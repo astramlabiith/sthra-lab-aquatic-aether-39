@@ -5,11 +5,14 @@ import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { LogOut, Image, BookText, Trophy, Users, GraduationCap } from 'lucide-react';
+import { LogOut, Image, BookText, Trophy, Users, GraduationCap, Layers, Sparkles, Briefcase } from 'lucide-react';
 import { PublicationsAdmin } from '@/components/admin/PublicationsAdmin';
 import { AwardsAdmin } from '@/components/admin/AwardsAdmin';
 import { TeamAdmin } from '@/components/admin/TeamAdmin';
 import { CoursesAdmin } from '@/components/admin/CoursesAdmin';
+import { ProjectsAdmin } from '@/components/admin/ProjectsAdmin';
+import { HeroSlidesAdmin } from '@/components/admin/HeroSlidesAdmin';
+import { CareersAdmin } from '@/components/admin/CareersAdmin';
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -47,19 +50,25 @@ const AdminDashboard = () => {
           </div>
 
           <Tabs defaultValue="team" className="w-full">
-            <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full mb-8 h-auto">
+            <TabsList className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 w-full mb-8 h-auto">
               <TabsTrigger value="team" className="flex gap-2 py-3"><Users className="h-4 w-4" />Team</TabsTrigger>
+              <TabsTrigger value="projects" className="flex gap-2 py-3"><Layers className="h-4 w-4" />Projects</TabsTrigger>
+              <TabsTrigger value="hero" className="flex gap-2 py-3"><Sparkles className="h-4 w-4" />Hero Slides</TabsTrigger>
               <TabsTrigger value="publications" className="flex gap-2 py-3"><BookText className="h-4 w-4" />Publications</TabsTrigger>
               <TabsTrigger value="awards" className="flex gap-2 py-3"><Trophy className="h-4 w-4" />Awards</TabsTrigger>
               <TabsTrigger value="courses" className="flex gap-2 py-3"><GraduationCap className="h-4 w-4" />Courses & Grants</TabsTrigger>
+              <TabsTrigger value="careers" className="flex gap-2 py-3"><Briefcase className="h-4 w-4" />Careers</TabsTrigger>
               <TabsTrigger value="gallery" className="flex gap-2 py-3" onClick={() => navigate('/admin/gallery')}>
                 <Image className="h-4 w-4" />Gallery
               </TabsTrigger>
             </TabsList>
             <TabsContent value="team"><TeamAdmin userId={userId} /></TabsContent>
+            <TabsContent value="projects"><ProjectsAdmin userId={userId} /></TabsContent>
+            <TabsContent value="hero"><HeroSlidesAdmin userId={userId} /></TabsContent>
             <TabsContent value="publications"><PublicationsAdmin /></TabsContent>
             <TabsContent value="awards"><AwardsAdmin /></TabsContent>
             <TabsContent value="courses"><CoursesAdmin /></TabsContent>
+            <TabsContent value="careers"><CareersAdmin /></TabsContent>
           </Tabs>
         </div>
       </main>
