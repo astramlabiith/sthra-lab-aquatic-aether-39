@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { Mail, Phone, MapPin, Clock, Globe, Send } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 const JoinUs = () => {
+  const [positions, setPositions] = useState<{ title: string; type: string; description: string; requirements: string[] }[]>([]);
+  useEffect(() => {
+    supabase.from('careers').select('*').eq('is_open', true).order('display_order').then(({ data }) => {
+      if (data) setPositions(data.map((c: any) => ({
+        title: c.title, type: c.kind, description: c.description || '', requirements: c.requirements || [],
+      })));
+    });
+  }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,12 +41,6 @@ const JoinUs = () => {
       message: ''
     });
   };
-  const positions = [{
-    title: "Research Intern - Autonomous Systems",
-    type: "Internship",
-    description: "Internship opportunity for Undergraduate students interested in autonomous systems research",
-    requirements: ["B tech student (2nd/3rd/4th year)", "interested in robotics and control systems", "fundamental level knowledge in any of the multi domainer aspects and Computer vision"]
-  }];
   return <div className="min-h-screen bg-white">
       <Navigation />
       <div className="pt-20">

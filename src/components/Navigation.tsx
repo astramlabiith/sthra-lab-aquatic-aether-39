@@ -34,6 +34,9 @@ export const Navigation = () => {
             <Link to="/gallery" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/gallery') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
               Gallery
             </Link>
+            <Link to="/careers" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/careers') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
+              Careers
+            </Link>
             <Link to="/join-us" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/join-us') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
               Join Us
             </Link>
