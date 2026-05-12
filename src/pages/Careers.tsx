@@ -3,7 +3,7 @@ import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { SEOHead } from '../components/SEOHead';
 import { supabase } from '@/integrations/supabase/client';
-import { Briefcase, GraduationCap, Mail, ExternalLink } from 'lucide-react';
+import { Briefcase, GraduationCap, Mail, ExternalLink, MapPin, Clock, Globe } from 'lucide-react';
 
 interface Career {
   id: string; kind: 'Internship' | 'Hiring'; title: string;
@@ -79,9 +79,9 @@ const Careers = () => {
         <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-6 max-w-6xl">
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-blue-800">Careers & Internships</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-blue-800">Join Us</h1>
               <p className="text-xl text-gray-900 max-w-3xl mx-auto leading-relaxed">
-                Join our team — explore current openings for research interns, project staff and full-time roles.
+                Be part of cutting-edge research in unmanned systems. Explore current openings for research interns, project staff and full-time roles.
               </p>
             </div>
 
@@ -97,7 +97,7 @@ const Careers = () => {
               )}
             </div>
 
-            <div>
+            <div className="mb-16">
               <div className="flex items-center gap-3 mb-6">
                 <Briefcase className="w-6 h-6 text-blue-800" />
                 <h2 className="text-3xl font-bold text-blue-800">Hiring</h2>
@@ -107,6 +107,58 @@ const Careers = () => {
               ) : (
                 <div className="grid md:grid-cols-2 gap-6">{hirings.map(renderCard)}</div>
               )}
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-bold text-blue-800 mb-8 text-center">Contact Information</h2>
+              <div className="bg-white border border-blue-800 rounded-2xl p-8 shadow-lg max-w-3xl mx-auto">
+                <div className="space-y-8">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
+                      <MapPin className="w-6 h-6 text-blue-800" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-blue-800 mb-2">Address</h3>
+                      <p className="text-gray-900">Dr. Himabindu Allaka</p>
+                      <p className="text-gray-900">Academic Block, C – 604</p>
+                      <p className="text-gray-900">Mechanical and Aerospace Engineering</p>
+                      <p className="text-gray-900">Indian Institute of Technology, Hyderabad</p>
+                      <p className="text-gray-900">Sangareddy, 502284</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
+                      <Mail className="w-6 h-6 text-blue-800" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-blue-800 mb-2">Email</h3>
+                      <a href="mailto:Himabindu.allaka@mae.iith.ac.in" className="text-blue-700 hover:text-blue-900 transition-colors">
+                        Himabindu.allaka@mae.iith.ac.in
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
+                      <Globe className="w-6 h-6 text-blue-800" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-blue-800 mb-2">Website</h3>
+                      <a href="https://www.astramlabiith.in" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 transition-colors">www.astramlabiith.in</a>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
+                      <Clock className="w-6 h-6 text-blue-800" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-blue-800 mb-2">Office Hours</h3>
+                      <p className="text-gray-900">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                      <p className="text-gray-900">Saturday: 9:00 AM - 1:00 PM</p>
+                      <p className="text-gray-900">Sunday: Closed</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
