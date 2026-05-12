@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from '@/hooks/use-toast';
-import { Trash2, Plus } from 'lucide-react';
+import { Trash2, Plus, Pencil, X } from 'lucide-react';
 import { uploadContentImage } from '@/lib/adminUpload';
 
 const CATEGORIES = ['UAVs', 'AUVs', 'ROVs', 'USVs', 'GNSS', 'Mars Rovers'] as const;
@@ -30,6 +30,8 @@ export const ProjectsAdmin = ({ userId }: Props) => {
   const [items, setItems] = useState<Project[]>([]);
   const [form, setForm] = useState({ ...blank });
   const [photo, setPhoto] = useState<File | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editingImage, setEditingImage] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
 
   const fetchItems = async () => {
@@ -38,13 +40,29 @@ export const ProjectsAdmin = ({ userId }: Props) => {
   };
   useEffect(() => { fetchItems(); }, []);
 
+  const resetForm = () => {
+    setForm({ ...blank }); setPhoto(null); setEditingId(null); setEditingImage(null);
+  };
+
+  const startEdit = (p: Project) => {
+    setEditingId(p.id);
+    setEditingImage(p.image_url);
+    setPhoto(null);
+    setForm({
+      category: p.category, title: p.title, description: p.description || '',
+      progress: p.progress, publications: p.publications.join(', '),
+      link: p.link || '', display_order: p.display_order,
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
     try {
-      let imageUrl: string | null = null;
+      let imageUrl: string | null = editingImage;
       if (photo) imageUrl = await uploadContentImage(photo, userId);
-      const { error } = await supabase.from('projects').insert({
+      const payload = {
         category: form.category,
         title: form.title,
         description: form.description || null,
@@ -53,10 +71,13 @@ export const ProjectsAdmin = ({ userId }: Props) => {
         link: form.link || null,
         image_url: imageUrl,
         display_order: Number(form.display_order) || 0,
-      });
+      };
+      const { error } = editingId
+        ? await supabase.from('projects').update(payload).eq('id', editingId)
+        : await supabase.from('projects').insert(payload);
       if (error) throw error;
-      toast({ title: 'Project added' });
-      setForm({ ...blank }); setPhoto(null);
+      toast({ title: editingId ? 'Project updated' : 'Project added' });
+      resetForm();
       fetchItems();
     } catch (err: any) {
       toast({ title: 'Failed', description: err.message, variant: 'destructive' });
@@ -67,13 +88,13 @@ export const ProjectsAdmin = ({ userId }: Props) => {
     if (!confirm('Delete this project?')) return;
     const { error } = await supabase.from('projects').delete().eq('id', id);
     if (error) toast({ title: 'Delete failed', description: error.message, variant: 'destructive' });
-    else { toast({ title: 'Deleted' }); fetchItems(); }
+    else { toast({ title: 'Deleted' }); fetchItems(); if (editingId === id) resetForm(); }
   };
 
   return (
     <div className="space-y-8">
       <Card>
-        <CardHeader><CardTitle>Add Project</CardTitle></CardHeader>
+        <CardHeader><CardTitle>{editingId ? 'Edit Project' : 'Add Project'}</CardTitle></CardHeader>
         <CardContent>
           <form onSubmit={submit} className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
@@ -105,9 +126,24 @@ export const ProjectsAdmin = ({ userId }: Props) => {
               <Input value={form.publications} onChange={e => setForm({ ...form, publications: e.target.value })} placeholder="ICRA 2024, IEEE ..." /></div>
             <div className="space-y-2"><Label>Learn More Link (optional)</Label>
               <Input value={form.link} onChange={e => setForm({ ...form, link: e.target.value })} placeholder="https://..." /></div>
-            <div className="space-y-2"><Label>Image</Label>
-              <Input type="file" accept="image/*" onChange={e => setPhoto(e.target.files?.[0] || null)} /></div>
-            <Button type="submit" disabled={saving}><Plus className="h-4 w-4 mr-2" />{saving ? 'Saving...' : 'Add Project'}</Button>
+            <div className="space-y-2">
+              <Label>Image {editingId && '(leave empty to keep current)'}</Label>
+              {editingImage && !photo && (
+                <img src={editingImage} alt="current" className="w-32 h-32 object-cover rounded mb-2" />
+              )}
+              <Input type="file" accept="image/*" onChange={e => setPhoto(e.target.files?.[0] || null)} />
+            </div>
+            <div className="flex gap-2">
+              <Button type="submit" disabled={saving}>
+                {editingId ? <Pencil className="h-4 w-4 mr-2" /> : <Plus className="h-4 w-4 mr-2" />}
+                {saving ? 'Saving...' : editingId ? 'Update Project' : 'Add Project'}
+              </Button>
+              {editingId && (
+                <Button type="button" variant="outline" onClick={resetForm}>
+                  <X className="h-4 w-4 mr-2" />Cancel
+                </Button>
+              )}
+            </div>
           </form>
         </CardContent>
       </Card>
@@ -117,13 +153,14 @@ export const ProjectsAdmin = ({ userId }: Props) => {
         <CardContent>
           <div className="space-y-3">
             {items.map(p => (
-              <div key={p.id} className="flex items-start gap-4 p-3 border rounded-lg">
+              <div key={p.id} className={`flex items-start gap-4 p-3 border rounded-lg ${editingId === p.id ? 'border-blue-500 bg-blue-50/50' : ''}`}>
                 {p.image_url && <img src={p.image_url} className="w-20 h-20 object-cover rounded" alt="" />}
                 <div className="flex-1">
                   <span className="text-xs uppercase font-semibold text-blue-700">{p.category} · {p.progress}%</span>
                   <h4 className="font-semibold">{p.title}</h4>
                   <p className="text-sm text-muted-foreground line-clamp-2">{p.description}</p>
                 </div>
+                <Button variant="outline" size="icon" onClick={() => startEdit(p)}><Pencil className="h-4 w-4" /></Button>
                 <Button variant="destructive" size="icon" onClick={() => remove(p.id)}><Trash2 className="h-4 w-4" /></Button>
               </div>
             ))}
