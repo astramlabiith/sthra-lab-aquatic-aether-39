@@ -160,24 +160,6 @@ const Careers = () => {
                 </div>
               </div>
             </div>
-              {internships.length === 0 ? (
-                <p className="text-gray-600">No internship openings at the moment.</p>
-              ) : (
-                <div className="grid md:grid-cols-2 gap-6">{internships.map(renderCard)}</div>
-              )}
-            </div>
-
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <Briefcase className="w-6 h-6 text-blue-800" />
-                <h2 className="text-3xl font-bold text-blue-800">Hiring</h2>
-              </div>
-              {hirings.length === 0 ? (
-                <p className="text-gray-600">No hiring openings at the moment.</p>
-              ) : (
-                <div className="grid md:grid-cols-2 gap-6">{hirings.map(renderCard)}</div>
-              )}
-            </div>
           </div>
         </section>
       </div>
