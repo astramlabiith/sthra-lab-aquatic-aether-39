@@ -51,6 +51,13 @@ export const HeroSection = () => {
         </div>
       </div>
 
+      {/* Center floating logo */}
+      <div className="relative z-10 flex justify-center px-6">
+        <div className="animate-float animate-fade-in">
+          <img src="/lovable-uploads/5b8449b8-6fc4-4091-b934-a8acbcf86385.png" alt="AstraM Logo" className="w-80 md:w-96 h-auto object-contain drop-shadow-2xl" />
+        </div>
+      </div>
+
       {/* Slide indicators */}
       {slides.length > 1 && (
         <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2 z-10">
