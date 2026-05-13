@@ -4,7 +4,7 @@ import { Footer } from '../components/Footer';
 import { SEOHead } from '../components/SEOHead';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+
 
 interface Member {
   id: string; category: string; name: string; role: string | null;
@@ -132,17 +132,9 @@ const Team = () => {
             {alumni.length > 0 && (
               <div className="mb-16">
                 <h2 className="academic-subheading text-center mb-8">Alumni</h2>
-                <Carousel opts={{ align: 'start', loop: alumni.length > 3 }} className="max-w-6xl mx-auto">
-                  <CarouselContent>
-                    {alumni.map(m => (
-                      <CarouselItem key={m.id} className="md:basis-1/2 lg:basis-1/3">
-                        <TeamMemberCard member={m} />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
-                </Carousel>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {alumni.map(m => <TeamMemberCard key={m.id} member={m} />)}
+                </div>
               </div>
             )}
           </div>
