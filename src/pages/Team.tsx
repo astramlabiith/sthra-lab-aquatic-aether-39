@@ -123,7 +123,7 @@ const Team = () => {
             {groups.map(group => group.members.length > 0 && (
               <div key={group.key} className="mb-16">
                 <h2 className="academic-subheading text-center mb-8">{group.label}</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   {group.members.map(m => <TeamMemberCard key={m.id} member={m} />)}
                 </div>
               </div>
