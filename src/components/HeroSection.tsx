@@ -39,22 +39,18 @@ export const HeroSection = () => {
         <h3 className="text-white text-sm md:text-base font-semibold tracking-wide drop-shadow">IIT Hyderabad</h3>
       </div>
 
-      {/* Bottom gradient bar to host the caption */}
+      {/* Bottom gradient bar with logo + caption */}
       <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/80 via-black/50 to-transparent pt-20 pb-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="flex justify-center mb-3">
+            <img src="/lovable-uploads/5b8449b8-6fc4-4091-b934-a8acbcf86385.png" alt="AstraM Logo" className="h-14 md:h-16 w-auto object-contain drop-shadow-2xl animate-float" />
+          </div>
           <p className="text-lg md:text-2xl font-medium animate-slide-up [animation-delay:0.2s] opacity-0 [animation-fill-mode:forwards] text-cyan-300 drop-shadow">
             Autonomous Systems and Technologies in Robotics and Advanced Multi-domain Applications
           </p>
           <p className="text-sm md:text-base text-gray-200 max-w-2xl mx-auto mt-3 animate-fade-in [animation-delay:0.4s] opacity-0 [animation-fill-mode:forwards] drop-shadow">
             ASTRAM Lab at the Department of Mechanical and Aerospace Engineering, IIT Hyderabad, advancing intelligent autonomous systems.
           </p>
-        </div>
-      </div>
-
-      {/* Center floating logo */}
-      <div className="relative z-10 flex justify-center px-6">
-        <div className="animate-float animate-fade-in">
-          <img src="/lovable-uploads/5b8449b8-6fc4-4091-b934-a8acbcf86385.png" alt="AstraM Logo" className="w-80 md:w-96 h-auto object-contain drop-shadow-2xl" />
         </div>
       </div>
 
