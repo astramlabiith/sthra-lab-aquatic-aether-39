@@ -30,35 +30,25 @@ export const HeroSection = () => {
         />
       ))}
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50" />
-
-      {/* Top logos */}
-      <div className="absolute top-8 left-0 right-0 flex justify-between items-center px-8 z-10">
-        <div className="flex items-center space-x-4">
-          <div className="text-white">
-            <h3 className="text-lg font-bold">AstraM Lab</h3>
-          </div>
+      {/* Top gradient bar to host titles without blocking the image */}
+      <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/70 via-black/40 to-transparent pt-6 pb-12 px-8 flex justify-between items-center">
+        <div className="flex items-center gap-3">
+          <img src="/lovable-uploads/5b8449b8-6fc4-4091-b934-a8acbcf86385.png" alt="AstraM Logo" className="h-10 object-contain drop-shadow" />
+          <span className="text-white font-semibold tracking-wide hidden sm:inline">AstraM Lab</span>
         </div>
-        <div className="flex items-center space-x-4">
-          <div className="text-white text-right">
-            <h3 className="text-lg font-bold">IIT Hyderabad</h3>
-          </div>
-        </div>
+        <h3 className="text-white text-sm md:text-base font-semibold tracking-wide drop-shadow">IIT Hyderabad</h3>
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <div className="flex justify-center mb-4 animate-fade-in">
-          <div className="animate-float">
-            <img src="/lovable-uploads/5b8449b8-6fc4-4091-b934-a8acbcf86385.png" alt="AstraM Logo" className="w-96 h-24 object-contain drop-shadow" />
-          </div>
+      {/* Bottom gradient bar to host the caption */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/80 via-black/50 to-transparent pt-20 pb-16 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-lg md:text-2xl font-medium animate-slide-up [animation-delay:0.2s] opacity-0 [animation-fill-mode:forwards] text-cyan-300 drop-shadow">
+            Autonomous Systems and Technologies in Robotics and Advanced Multi-domain Applications
+          </p>
+          <p className="text-sm md:text-base text-gray-200 max-w-2xl mx-auto mt-3 animate-fade-in [animation-delay:0.4s] opacity-0 [animation-fill-mode:forwards] drop-shadow">
+            ASTRAM Lab at the Department of Mechanical and Aerospace Engineering, IIT Hyderabad, advancing intelligent autonomous systems.
+          </p>
         </div>
-        <p className="text-xl md:text-2xl mb-4 animate-slide-up [animation-delay:0.2s] opacity-0 [animation-fill-mode:forwards] text-cyan-300">
-          Autonomous Systems and Technologies in Robotics and Advanced Multi-domain Applications
-        </p>
-        <p className="text-lg text-gray-200 max-w-2xl mx-auto animate-fade-in [animation-delay:0.4s] opacity-0 [animation-fill-mode:forwards] drop-shadow-lg">
-          ASTRAM Lab at the Department of Mechanical and Aerospace Engineering, IIT Hyderabad, is dedicated to advancing the science and engineering of intelligent autonomous systems.
-        </p>
       </div>
 
       {/* Slide indicators */}
