@@ -85,82 +85,87 @@ const Careers = () => {
               </p>
             </div>
 
-            <div className="mb-16">
-              <div className="flex items-center gap-3 mb-6">
-                <GraduationCap className="w-6 h-6 text-blue-800" />
-                <h2 className="text-3xl font-bold text-blue-800">Internships</h2>
-              </div>
-              {internships.length === 0 ? (
-                <p className="text-gray-600">No internship openings at the moment.</p>
-              ) : (
-                <div className="grid md:grid-cols-2 gap-6">{internships.map(renderCard)}</div>
-              )}
-            </div>
+            <div className="grid lg:grid-cols-2 gap-10">
+              {/* Left: Internships + Hiring */}
+              <div className="space-y-12">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <GraduationCap className="w-6 h-6 text-blue-800" />
+                    <h2 className="text-3xl font-bold text-blue-800">Internships</h2>
+                  </div>
+                  {internships.length === 0 ? (
+                    <p className="text-gray-600">No internship openings at the moment.</p>
+                  ) : (
+                    <div className="grid gap-6">{internships.map(renderCard)}</div>
+                  )}
+                </div>
 
-            <div className="mb-16">
-              <div className="flex items-center gap-3 mb-6">
-                <Briefcase className="w-6 h-6 text-blue-800" />
-                <h2 className="text-3xl font-bold text-blue-800">Hiring</h2>
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <Briefcase className="w-6 h-6 text-blue-800" />
+                    <h2 className="text-3xl font-bold text-blue-800">Hiring</h2>
+                  </div>
+                  {hirings.length === 0 ? (
+                    <p className="text-gray-600">No hiring openings at the moment.</p>
+                  ) : (
+                    <div className="grid gap-6">{hirings.map(renderCard)}</div>
+                  )}
+                </div>
               </div>
-              {hirings.length === 0 ? (
-                <p className="text-gray-600">No hiring openings at the moment.</p>
-              ) : (
-                <div className="grid md:grid-cols-2 gap-6">{hirings.map(renderCard)}</div>
-              )}
-            </div>
 
-            <div>
-              <h2 className="text-3xl font-bold text-blue-800 mb-8 text-center">Contact Information</h2>
-              <div className="bg-white border border-blue-800 rounded-2xl p-8 shadow-lg max-w-3xl mx-auto">
-                <div className="space-y-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
-                      <MapPin className="w-6 h-6 text-blue-800" />
+              {/* Right: Contact */}
+              <div className="lg:sticky lg:top-24 self-start">
+                <h2 className="text-3xl font-bold text-blue-800 mb-8">Contact Information</h2>
+                <div className="bg-white border border-blue-800 rounded-2xl p-8 shadow-lg">
+                  <div className="space-y-8">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
+                        <MapPin className="w-6 h-6 text-blue-800" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-blue-800 mb-2">Address</h3>
+                        <p className="text-gray-900">Dr. Himabindu Allaka</p>
+                        <p className="text-gray-900">Academic Block, C – 604</p>
+                        <p className="text-gray-900">Mechanical and Aerospace Engineering</p>
+                        <p className="text-gray-900">Indian Institute of Technology, Hyderabad</p>
+                        <p className="text-gray-900">Sangareddy, 502284</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-blue-800 mb-2">Address</h3>
-                      <p className="text-gray-900">Dr. Himabindu Allaka</p>
-                      <p className="text-gray-900">Academic Block, C – 604</p>
-                      <p className="text-gray-900">Mechanical and Aerospace Engineering</p>
-                      <p className="text-gray-900">Indian Institute of Technology, Hyderabad</p>
-                      <p className="text-gray-900">Sangareddy, 502284</p>
+                    <div className="flex items-start space-x-4">
+                      <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
+                        <Mail className="w-6 h-6 text-blue-800" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-blue-800 mb-2">Email</h3>
+                        <a href="mailto:Himabindu.allaka@mae.iith.ac.in" className="text-blue-700 hover:text-blue-900 transition-colors">
+                          Himabindu.allaka@mae.iith.ac.in
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
-                      <Mail className="w-6 h-6 text-blue-800" />
+                    <div className="flex items-start space-x-4">
+                      <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
+                        <Globe className="w-6 h-6 text-blue-800" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-blue-800 mb-2">Website</h3>
+                        <a href="https://www.astramlabiith.in" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 transition-colors">www.astramlabiith.in</a>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-blue-800 mb-2">Email</h3>
-                      <a href="mailto:Himabindu.allaka@mae.iith.ac.in" className="text-blue-700 hover:text-blue-900 transition-colors">
-                        Himabindu.allaka@mae.iith.ac.in
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
-                      <Globe className="w-6 h-6 text-blue-800" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-blue-800 mb-2">Website</h3>
-                      <a href="https://www.astramlabiith.in" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 transition-colors">www.astramlabiith.in</a>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
-                      <Clock className="w-6 h-6 text-blue-800" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-blue-800 mb-2">Office Hours</h3>
-                      <p className="text-gray-900">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p className="text-gray-900">Saturday: 9:00 AM - 1:00 PM</p>
-                      <p className="text-gray-900">Sunday: Closed</p>
+                    <div className="flex items-start space-x-4">
+                      <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full border border-blue-800 shrink-0">
+                        <Clock className="w-6 h-6 text-blue-800" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-blue-800 mb-2">Office Hours</h3>
+                        <p className="text-gray-900">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p className="text-gray-900">Saturday: 9:00 AM - 1:00 PM</p>
+                        <p className="text-gray-900">Sunday: Closed</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
         </section>
       </div>
       <Footer />
