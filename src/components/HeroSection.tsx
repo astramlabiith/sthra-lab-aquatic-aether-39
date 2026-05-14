@@ -54,22 +54,23 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Slide indicators */}
+      {/* Slide indicators - moved to right edge to avoid overlap with caption */}
       {slides.length > 1 && (
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-20">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
               aria-label={`Slide ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${i === index ? 'w-8 bg-cyan-400' : 'w-2 bg-white/50'}`}
+              className={`w-2 rounded-full transition-all ${i === index ? 'h-8 bg-cyan-400' : 'h-2 bg-white/50'}`}
             />
           ))}
         </div>
       )}
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex justify-center">
+      {/* Scroll indicator - moved to left edge to avoid overlap */}
+      <div className="absolute bottom-6 left-6 z-20 animate-bounce">
+        <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex justify-center bg-black/30 backdrop-blur-sm">
           <div className="w-1 h-3 bg-cyan-400 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
