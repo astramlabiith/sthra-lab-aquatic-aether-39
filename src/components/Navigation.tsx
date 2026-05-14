@@ -16,23 +16,23 @@ export const Navigation = () => {
             <Link to="/" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
               Home
             </Link>
-            <Link to="/team" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/team') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
-              Team
-            </Link>
             <Link to="/projects" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/projects') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
               Projects
-            </Link>
-            <Link to="/publications" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/publications') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
-              Publications
             </Link>
             <Link to="/awards" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/awards') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
               Awards
             </Link>
-            <Link to="/courses" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/courses') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
-              Courses
+            <Link to="/publications" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/publications') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
+              Publications
+            </Link>
+            <Link to="/team" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/team') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
+              Team
             </Link>
             <Link to="/gallery" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/gallery') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
               Gallery
+            </Link>
+            <Link to="/courses" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/courses') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
+              Courses
             </Link>
             <Link to="/careers" className={`transition-all duration-300 hover:text-blue-600 hover:scale-105 ${isActive('/careers') || isActive('/join-us') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-700'}`}>
               Join Us
