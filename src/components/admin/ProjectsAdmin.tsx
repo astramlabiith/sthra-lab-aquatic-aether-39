@@ -14,13 +14,13 @@ const CATEGORIES = ['UAVs', 'AUVs', 'ROVs', 'USVs', 'GNSS', 'Mars Rovers'] as co
 type Cat = typeof CATEGORIES[number];
 
 interface Project {
-  id: string; category: Cat; title: string; image_url: string | null;
+  id: string; category: Cat; categories: Cat[]; title: string; image_url: string | null;
   description: string | null; progress: number; publications: string[];
   link: string | null; display_order: number;
 }
 
 const blank = {
-  category: 'UAVs' as Cat, title: '', description: '',
+  category: 'UAVs' as Cat, categories: ['UAVs'] as Cat[], title: '', description: '',
   progress: 0, publications: '', link: '', display_order: 0,
 };
 
