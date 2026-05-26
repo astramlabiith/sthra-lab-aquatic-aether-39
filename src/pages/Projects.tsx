@@ -36,15 +36,17 @@ const Projects = () => {
         map[c.id] = { description: CATEGORY_DESCRIPTIONS[c.id] || '', projects: [] };
       });
       (data || []).forEach((p: any) => {
-        const key = p.category;
-        if (!map[key]) map[key] = { description: CATEGORY_DESCRIPTIONS[key] || '', projects: [] };
-        map[key].projects.push({
-          title: p.title,
-          image: p.image_url || '/placeholder.svg',
-          description: p.description || '',
-          progress: p.progress || 0,
-          publications: p.publications || [],
-          link: p.link || undefined,
+        const cats: string[] = (p.categories && p.categories.length) ? p.categories : [p.category];
+        cats.forEach((key) => {
+          if (!map[key]) map[key] = { description: CATEGORY_DESCRIPTIONS[key] || '', projects: [] };
+          map[key].projects.push({
+            title: p.title,
+            image: p.image_url || '/placeholder.svg',
+            description: p.description || '',
+            progress: p.progress || 0,
+            publications: p.publications || [],
+            link: p.link || undefined,
+          });
         });
       });
       setProjectData(map);
