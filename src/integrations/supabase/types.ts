@@ -225,6 +225,7 @@ export type Database = {
       }
       projects: {
         Row: {
+          categories: string[]
           category: Database["public"]["Enums"]["project_category"]
           created_at: string
           description: string | null
@@ -238,6 +239,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          categories?: string[]
           category: Database["public"]["Enums"]["project_category"]
           created_at?: string
           description?: string | null
@@ -251,6 +253,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          categories?: string[]
           category?: Database["public"]["Enums"]["project_category"]
           created_at?: string
           description?: string | null

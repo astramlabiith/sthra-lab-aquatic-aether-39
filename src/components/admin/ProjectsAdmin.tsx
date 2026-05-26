@@ -14,13 +14,13 @@ const CATEGORIES = ['UAVs', 'AUVs', 'ROVs', 'USVs', 'GNSS', 'Mars Rovers'] as co
 type Cat = typeof CATEGORIES[number];
 
 interface Project {
-  id: string; category: Cat; title: string; image_url: string | null;
+  id: string; category: Cat; categories: Cat[]; title: string; image_url: string | null;
   description: string | null; progress: number; publications: string[];
   link: string | null; display_order: number;
 }
 
 const blank = {
-  category: 'UAVs' as Cat, title: '', description: '',
+  category: 'UAVs' as Cat, categories: ['UAVs'] as Cat[], title: '', description: '',
   progress: 0, publications: '', link: '', display_order: 0,
 };
 
@@ -49,11 +49,22 @@ export const ProjectsAdmin = ({ userId }: Props) => {
     setEditingImage(p.image_url);
     setPhoto(null);
     setForm({
-      category: p.category, title: p.title, description: p.description || '',
+      category: p.category,
+      categories: (p.categories && p.categories.length ? p.categories : [p.category]) as Cat[],
+      title: p.title, description: p.description || '',
       progress: p.progress, publications: p.publications.join(', '),
       link: p.link || '', display_order: p.display_order,
     });
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const toggleCategory = (c: Cat) => {
+    setForm(f => {
+      const has = f.categories.includes(c);
+      const next = has ? f.categories.filter(x => x !== c) : [...f.categories, c];
+      const safe = next.length ? next : [c];
+      return { ...f, categories: safe, category: safe[0] };
+    });
   };
 
   const submit = async (e: React.FormEvent) => {
@@ -63,7 +74,8 @@ export const ProjectsAdmin = ({ userId }: Props) => {
       let imageUrl: string | null = editingImage;
       if (photo) imageUrl = await uploadContentImage(photo, userId);
       const payload = {
-        category: form.category,
+        category: form.categories[0] || form.category,
+        categories: form.categories,
         title: form.title,
         description: form.description || null,
         progress: Number(form.progress) || 0,
@@ -97,20 +109,23 @@ export const ProjectsAdmin = ({ userId }: Props) => {
         <CardHeader><CardTitle>{editingId ? 'Edit Project' : 'Add Project'}</CardTitle></CardHeader>
         <CardContent>
           <form onSubmit={submit} className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label>Category *</Label>
-                <Select value={form.category} onValueChange={(v: Cat) => setForm({ ...form, category: v })}>
-                  <SelectTrigger><SelectValue /></SelectTrigger>
-                  <SelectContent>
-                    {CATEGORIES.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}
-                  </SelectContent>
-                </Select>
+            <div className="space-y-2">
+              <Label>Categories * <span className="text-xs text-muted-foreground font-normal">(select one or more — the project will show under each)</span></Label>
+              <div className="flex flex-wrap gap-2">
+                {CATEGORIES.map(c => {
+                  const active = form.categories.includes(c);
+                  return (
+                    <button type="button" key={c} onClick={() => toggleCategory(c)}
+                      className={`px-3 py-1.5 rounded-full text-sm border transition-colors ${active ? 'bg-primary text-primary-foreground border-primary' : 'bg-background hover:bg-muted border-border'}`}>
+                      {c}
+                    </button>
+                  );
+                })}
               </div>
-              <div className="space-y-2">
-                <Label>Title *</Label>
-                <Input value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} required />
-              </div>
+            </div>
+            <div className="space-y-2">
+              <Label>Title *</Label>
+              <Input value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} required />
             </div>
             <div className="space-y-2"><Label>Description</Label>
               <Textarea value={form.description} onChange={e => setForm({ ...form, description: e.target.value })} rows={4} /></div>
@@ -169,7 +184,7 @@ export const ProjectsAdmin = ({ userId }: Props) => {
               <div key={p.id} className={`flex items-start gap-4 p-3 border rounded-lg ${editingId === p.id ? 'border-blue-500 bg-blue-50/50' : ''}`}>
                 {p.image_url && <img src={p.image_url} className="w-20 h-20 object-cover rounded" alt="" />}
                 <div className="flex-1">
-                  <span className="text-xs uppercase font-semibold text-blue-700">{p.category} · {p.progress}%</span>
+                  <span className="text-xs uppercase font-semibold text-blue-700">{(p.categories?.length ? p.categories : [p.category]).join(' · ')} · {p.progress}%</span>
                   <h4 className="font-semibold">{p.title}</h4>
                   <p className="text-sm text-muted-foreground line-clamp-2">{p.description}</p>
                 </div>
