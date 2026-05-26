@@ -184,7 +184,7 @@ export const ProjectsAdmin = ({ userId }: Props) => {
               <div key={p.id} className={`flex items-start gap-4 p-3 border rounded-lg ${editingId === p.id ? 'border-blue-500 bg-blue-50/50' : ''}`}>
                 {p.image_url && <img src={p.image_url} className="w-20 h-20 object-cover rounded" alt="" />}
                 <div className="flex-1">
-                  <span className="text-xs uppercase font-semibold text-blue-700">{p.category} · {p.progress}%</span>
+                  <span className="text-xs uppercase font-semibold text-blue-700">{(p.categories?.length ? p.categories : [p.category]).join(' · ')} · {p.progress}%</span>
                   <h4 className="font-semibold">{p.title}</h4>
                   <p className="text-sm text-muted-foreground line-clamp-2">{p.description}</p>
                 </div>
