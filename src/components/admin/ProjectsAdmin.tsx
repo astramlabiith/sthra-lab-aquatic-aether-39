@@ -127,6 +127,7 @@ export const ProjectsAdmin = ({ userId }: Props) => {
               <Label>Title *</Label>
               <Input value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} required />
             </div>
+            <div className="space-y-2"><Label>Description</Label>
               <Textarea value={form.description} onChange={e => setForm({ ...form, description: e.target.value })} rows={4} /></div>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2"><Label>Progress (%)</Label>
