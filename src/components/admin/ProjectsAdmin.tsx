@@ -129,7 +129,20 @@ export const ProjectsAdmin = ({ userId }: Props) => {
             <div className="space-y-2">
               <Label>Image {editingId && '(leave empty to keep current)'}</Label>
               {editingImage && !photo && (
-                <img src={editingImage} alt="current" className="w-32 h-32 object-cover rounded mb-2" />
+                <div className="flex items-center gap-3 mb-2">
+                  <img src={editingImage} alt="current" className="w-32 h-32 object-cover rounded" />
+                  <Button type="button" variant="destructive" size="sm" onClick={() => setEditingImage(null)}>
+                    <Trash2 className="h-4 w-4 mr-2" />Remove image
+                  </Button>
+                </div>
+              )}
+              {photo && (
+                <div className="flex items-center gap-3 mb-2 text-sm text-muted-foreground">
+                  <span>New: {photo.name}</span>
+                  <Button type="button" variant="outline" size="sm" onClick={() => setPhoto(null)}>
+                    <X className="h-4 w-4 mr-1" />Clear
+                  </Button>
+                </div>
               )}
               <Input type="file" accept="image/*" onChange={e => setPhoto(e.target.files?.[0] || null)} />
             </div>
