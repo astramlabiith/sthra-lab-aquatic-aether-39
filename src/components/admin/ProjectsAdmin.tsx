@@ -109,22 +109,24 @@ export const ProjectsAdmin = ({ userId }: Props) => {
         <CardHeader><CardTitle>{editingId ? 'Edit Project' : 'Add Project'}</CardTitle></CardHeader>
         <CardContent>
           <form onSubmit={submit} className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label>Category *</Label>
-                <Select value={form.category} onValueChange={(v: Cat) => setForm({ ...form, category: v })}>
-                  <SelectTrigger><SelectValue /></SelectTrigger>
-                  <SelectContent>
-                    {CATEGORIES.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label>Title *</Label>
-                <Input value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} required />
+            <div className="space-y-2">
+              <Label>Categories * <span className="text-xs text-muted-foreground font-normal">(select one or more — the project will show under each)</span></Label>
+              <div className="flex flex-wrap gap-2">
+                {CATEGORIES.map(c => {
+                  const active = form.categories.includes(c);
+                  return (
+                    <button type="button" key={c} onClick={() => toggleCategory(c)}
+                      className={`px-3 py-1.5 rounded-full text-sm border transition-colors ${active ? 'bg-primary text-primary-foreground border-primary' : 'bg-background hover:bg-muted border-border'}`}>
+                      {c}
+                    </button>
+                  );
+                })}
               </div>
             </div>
-            <div className="space-y-2"><Label>Description</Label>
+            <div className="space-y-2">
+              <Label>Title *</Label>
+              <Input value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} required />
+            </div>
               <Textarea value={form.description} onChange={e => setForm({ ...form, description: e.target.value })} rows={4} /></div>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2"><Label>Progress (%)</Label>
