@@ -74,7 +74,8 @@ export const ProjectsAdmin = ({ userId }: Props) => {
       let imageUrl: string | null = editingImage;
       if (photo) imageUrl = await uploadContentImage(photo, userId);
       const payload = {
-        category: form.category,
+        category: form.categories[0] || form.category,
+        categories: form.categories,
         title: form.title,
         description: form.description || null,
         progress: Number(form.progress) || 0,
