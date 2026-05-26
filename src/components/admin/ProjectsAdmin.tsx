@@ -49,11 +49,22 @@ export const ProjectsAdmin = ({ userId }: Props) => {
     setEditingImage(p.image_url);
     setPhoto(null);
     setForm({
-      category: p.category, title: p.title, description: p.description || '',
+      category: p.category,
+      categories: (p.categories && p.categories.length ? p.categories : [p.category]) as Cat[],
+      title: p.title, description: p.description || '',
       progress: p.progress, publications: p.publications.join(', '),
       link: p.link || '', display_order: p.display_order,
     });
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const toggleCategory = (c: Cat) => {
+    setForm(f => {
+      const has = f.categories.includes(c);
+      const next = has ? f.categories.filter(x => x !== c) : [...f.categories, c];
+      const safe = next.length ? next : [c];
+      return { ...f, categories: safe, category: safe[0] };
+    });
   };
 
   const submit = async (e: React.FormEvent) => {
