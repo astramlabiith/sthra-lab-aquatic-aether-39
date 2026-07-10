@@ -351,6 +351,7 @@ export type Database = {
       }
       team_members: {
         Row: {
+          alumni_category: string | null
           category: Database["public"]["Enums"]["team_category"]
           created_at: string
           display_order: number
@@ -367,6 +368,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          alumni_category?: string | null
           category: Database["public"]["Enums"]["team_category"]
           created_at?: string
           display_order?: number
@@ -383,6 +385,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          alumni_category?: string | null
           category?: Database["public"]["Enums"]["team_category"]
           created_at?: string
           display_order?: number
