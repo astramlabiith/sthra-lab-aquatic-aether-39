@@ -20,13 +20,13 @@ const CATEGORY_ORDER: { key: string; label: string; accent: string; bg: string }
   { key: 'btech',         label: 'B.Tech Students',  accent: 'from-cyan-600 to-sky-600',       bg: 'bg-cyan-50/60' },
 ];
 
-const ALUMNI_TABS: { key: string; label: string; match: (r: string) => boolean }[] = [
-  { key: 'mtech',         label: 'M.Tech',          match: r => /m\.?\s*tech|mtech|masters?/.test(r) },
-  { key: 'btech',         label: 'B.Tech',          match: r => /b\.?\s*tech|btech|undergrad/.test(r) },
-  { key: 'intern',        label: 'Interns',         match: r => /intern/.test(r) },
-  { key: 'project_staff', label: 'Project Staff',   match: r => /staff|research\s*associate|ra\b|engineer/.test(r) },
-  { key: 'phd',           label: 'PhDs',            match: r => /ph\.?d/.test(r) },
-  { key: 'all',           label: 'All',             match: () => true },
+const ALUMNI_TABS: { key: string; label: string }[] = [
+  { key: 'mtech',         label: 'M.Tech' },
+  { key: 'btech',         label: 'B.Tech' },
+  { key: 'intern',        label: 'Interns' },
+  { key: 'project_staff', label: 'Project Staff' },
+  { key: 'phd',           label: 'PhDs' },
+  { key: 'all',           label: 'All' },
 ];
 
 const TeamMemberCard = ({ member }: { member: Member }) => (
