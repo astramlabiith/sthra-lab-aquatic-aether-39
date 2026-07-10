@@ -20,12 +20,12 @@ const CATEGORY_ORDER: { key: string; label: string; accent: string; bg: string }
 ];
 
 const ALUMNI_TABS: { key: string; label: string; match: (r: string) => boolean }[] = [
-  { key: 'all',           label: 'All',             match: () => true },
   { key: 'mtech',         label: 'M.Tech',          match: r => /m\.?\s*tech|mtech|masters?/.test(r) },
   { key: 'btech',         label: 'B.Tech',          match: r => /b\.?\s*tech|btech|undergrad/.test(r) },
   { key: 'intern',        label: 'Interns',         match: r => /intern/.test(r) },
   { key: 'project_staff', label: 'Project Staff',   match: r => /staff|research\s*associate|ra\b|engineer/.test(r) },
   { key: 'phd',           label: 'PhDs',            match: r => /ph\.?d/.test(r) },
+  { key: 'all',           label: 'All',             match: () => true },
 ];
 
 const TeamMemberCard = ({ member }: { member: Member }) => (
@@ -71,7 +71,7 @@ const SectionHeader = ({ label, count, accent }: { label: string; count: number;
 const Team = () => {
   const [members, setMembers] = useState<Member[]>([]);
   const [showFullBio, setShowFullBio] = useState(false);
-  const [alumniTab, setAlumniTab] = useState<string>('all');
+  const [alumniTab, setAlumniTab] = useState<string>('mtech');
 
   useEffect(() => {
     supabase.from('team_members').select('*').order('display_order').then(({ data }) => {
