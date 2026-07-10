@@ -9,6 +9,7 @@ interface Member {
   id: string; category: string; name: string; role: string | null;
   specialization: string | null; education: string | null; email: string | null;
   linkedin: string | null; image_url: string | null; short_bio: string | null; full_bio: string | null;
+  alumni_category: string | null;
 }
 
 const CATEGORY_ORDER: { key: string; label: string; accent: string; bg: string }[] = [
@@ -19,13 +20,13 @@ const CATEGORY_ORDER: { key: string; label: string; accent: string; bg: string }
   { key: 'btech',         label: 'B.Tech Students',  accent: 'from-cyan-600 to-sky-600',       bg: 'bg-cyan-50/60' },
 ];
 
-const ALUMNI_TABS: { key: string; label: string; match: (r: string) => boolean }[] = [
-  { key: 'mtech',         label: 'M.Tech',          match: r => /m\.?\s*tech|mtech|masters?/.test(r) },
-  { key: 'btech',         label: 'B.Tech',          match: r => /b\.?\s*tech|btech|undergrad/.test(r) },
-  { key: 'intern',        label: 'Interns',         match: r => /intern/.test(r) },
-  { key: 'project_staff', label: 'Project Staff',   match: r => /staff|research\s*associate|ra\b|engineer/.test(r) },
-  { key: 'phd',           label: 'PhDs',            match: r => /ph\.?d/.test(r) },
-  { key: 'all',           label: 'All',             match: () => true },
+const ALUMNI_TABS: { key: string; label: string }[] = [
+  { key: 'mtech',         label: 'M.Tech' },
+  { key: 'btech',         label: 'B.Tech' },
+  { key: 'intern',        label: 'Interns' },
+  { key: 'project_staff', label: 'Project Staff' },
+  { key: 'phd',           label: 'PhDs' },
+  { key: 'all',           label: 'All' },
 ];
 
 const TeamMemberCard = ({ member }: { member: Member }) => (
@@ -87,15 +88,14 @@ const Team = () => {
     const map: Record<string, number> = { all: alumni.length };
     for (const tab of ALUMNI_TABS) {
       if (tab.key === 'all') continue;
-      map[tab.key] = alumni.filter(a => tab.match(((a.role || '') + ' ' + (a.specialization || '')).toLowerCase())).length;
+      map[tab.key] = alumni.filter(a => a.alumni_category === tab.key).length;
     }
     return map;
   }, [alumni]);
 
   const filteredAlumni = useMemo(() => {
-    const tab = ALUMNI_TABS.find(t => t.key === alumniTab)!;
-    if (tab.key === 'all') return alumni;
-    return alumni.filter(a => tab.match(((a.role || '') + ' ' + (a.specialization || '')).toLowerCase()));
+    if (alumniTab === 'all') return alumni;
+    return alumni.filter(a => a.alumni_category === alumniTab);
   }, [alumni, alumniTab]);
 
   return (

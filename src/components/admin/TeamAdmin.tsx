@@ -20,15 +20,25 @@ const CATEGORIES = [
   { value: 'alumni', label: 'Alumni' },
 ];
 
+const ALUMNI_SUB = [
+  { value: 'mtech',         label: 'M.Tech' },
+  { value: 'btech',         label: 'B.Tech' },
+  { value: 'intern',        label: 'Intern' },
+  { value: 'project_staff', label: 'Project Staff' },
+  { value: 'phd',           label: 'PhD' },
+];
+
 interface Member {
   id: string; category: string; name: string; role: string | null;
   specialization: string | null; education: string | null; email: string | null; linkedin: string | null;
   image_url: string | null; short_bio: string | null; full_bio: string | null; display_order: number;
+  alumni_category: string | null;
 }
 
 const blank = {
   category: 'phd', name: '', role: '', specialization: '', education: '',
   email: '', linkedin: '', short_bio: '', full_bio: '', display_order: 0,
+  alumni_category: '',
 };
 
 interface Props { userId: string; }
@@ -71,6 +81,7 @@ export const TeamAdmin = ({ userId }: Props) => {
       short_bio: m.short_bio || '',
       full_bio: m.full_bio || '',
       display_order: m.display_order || 0,
+      alumni_category: m.alumni_category || '',
     });
     setExistingImage(m.image_url);
     setRemoveImage(false);
@@ -99,6 +110,7 @@ export const TeamAdmin = ({ userId }: Props) => {
         short_bio: form.short_bio || null,
         full_bio: form.full_bio || null,
         display_order: Number(form.display_order) || 0,
+        alumni_category: form.category === 'alumni' ? (form.alumni_category || null) : null,
       };
 
       if (editingId) {
@@ -144,6 +156,15 @@ export const TeamAdmin = ({ userId }: Props) => {
               <div className="space-y-2"><Label>Name *</Label>
                 <Input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required /></div>
             </div>
+            {form.category === 'alumni' && (
+              <div className="space-y-2">
+                <Label>Alumni Sub-Category * <span className="text-xs text-muted-foreground">(which tab this alumnus appears under)</span></Label>
+                <Select value={form.alumni_category} onValueChange={v => setForm({ ...form, alumni_category: v })}>
+                  <SelectTrigger><SelectValue placeholder="Select sub-category" /></SelectTrigger>
+                  <SelectContent>{ALUMNI_SUB.map(c => <SelectItem key={c.value} value={c.value}>{c.label}</SelectItem>)}</SelectContent>
+                </Select>
+              </div>
+            )}
             <div className="space-y-2">
               <Label htmlFor="member-photo">Photo</Label>
               {editingId && existingImage && !removeImage && !photo && (
