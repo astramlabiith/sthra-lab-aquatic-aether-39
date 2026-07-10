@@ -20,15 +20,25 @@ const CATEGORIES = [
   { value: 'alumni', label: 'Alumni' },
 ];
 
+const ALUMNI_SUB = [
+  { value: 'mtech',         label: 'M.Tech' },
+  { value: 'btech',         label: 'B.Tech' },
+  { value: 'intern',        label: 'Intern' },
+  { value: 'project_staff', label: 'Project Staff' },
+  { value: 'phd',           label: 'PhD' },
+];
+
 interface Member {
   id: string; category: string; name: string; role: string | null;
   specialization: string | null; education: string | null; email: string | null; linkedin: string | null;
   image_url: string | null; short_bio: string | null; full_bio: string | null; display_order: number;
+  alumni_category: string | null;
 }
 
 const blank = {
   category: 'phd', name: '', role: '', specialization: '', education: '',
   email: '', linkedin: '', short_bio: '', full_bio: '', display_order: 0,
+  alumni_category: '',
 };
 
 interface Props { userId: string; }
