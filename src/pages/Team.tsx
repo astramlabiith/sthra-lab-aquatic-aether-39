@@ -9,6 +9,7 @@ interface Member {
   id: string; category: string; name: string; role: string | null;
   specialization: string | null; education: string | null; email: string | null;
   linkedin: string | null; image_url: string | null; short_bio: string | null; full_bio: string | null;
+  alumni_category: string | null;
 }
 
 const CATEGORY_ORDER: { key: string; label: string; accent: string; bg: string }[] = [
