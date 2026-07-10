@@ -156,6 +156,15 @@ export const TeamAdmin = ({ userId }: Props) => {
               <div className="space-y-2"><Label>Name *</Label>
                 <Input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required /></div>
             </div>
+            {form.category === 'alumni' && (
+              <div className="space-y-2">
+                <Label>Alumni Sub-Category * <span className="text-xs text-muted-foreground">(which tab this alumnus appears under)</span></Label>
+                <Select value={form.alumni_category} onValueChange={v => setForm({ ...form, alumni_category: v })}>
+                  <SelectTrigger><SelectValue placeholder="Select sub-category" /></SelectTrigger>
+                  <SelectContent>{ALUMNI_SUB.map(c => <SelectItem key={c.value} value={c.value}>{c.label}</SelectItem>)}</SelectContent>
+                </Select>
+              </div>
+            )}
             <div className="space-y-2">
               <Label htmlFor="member-photo">Photo</Label>
               {editingId && existingImage && !removeImage && !photo && (
