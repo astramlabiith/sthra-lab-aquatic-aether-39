@@ -71,7 +71,7 @@ const SectionHeader = ({ label, count, accent }: { label: string; count: number;
 const Team = () => {
   const [members, setMembers] = useState<Member[]>([]);
   const [showFullBio, setShowFullBio] = useState(false);
-  const [alumniTab, setAlumniTab] = useState<string>('all');
+  const [alumniTab, setAlumniTab] = useState<string>('mtech');
 
   useEffect(() => {
     supabase.from('team_members').select('*').order('display_order').then(({ data }) => {
