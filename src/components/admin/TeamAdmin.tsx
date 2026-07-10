@@ -110,6 +110,7 @@ export const TeamAdmin = ({ userId }: Props) => {
         short_bio: form.short_bio || null,
         full_bio: form.full_bio || null,
         display_order: Number(form.display_order) || 0,
+        alumni_category: form.category === 'alumni' ? (form.alumni_category || null) : null,
       };
 
       if (editingId) {
