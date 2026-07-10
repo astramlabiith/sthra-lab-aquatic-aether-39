@@ -81,6 +81,7 @@ export const TeamAdmin = ({ userId }: Props) => {
       short_bio: m.short_bio || '',
       full_bio: m.full_bio || '',
       display_order: m.display_order || 0,
+      alumni_category: m.alumni_category || '',
     });
     setExistingImage(m.image_url);
     setRemoveImage(false);
