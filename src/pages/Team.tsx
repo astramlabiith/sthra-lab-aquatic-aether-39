@@ -88,15 +88,14 @@ const Team = () => {
     const map: Record<string, number> = { all: alumni.length };
     for (const tab of ALUMNI_TABS) {
       if (tab.key === 'all') continue;
-      map[tab.key] = alumni.filter(a => tab.match(((a.role || '') + ' ' + (a.specialization || '')).toLowerCase())).length;
+      map[tab.key] = alumni.filter(a => a.alumni_category === tab.key).length;
     }
     return map;
   }, [alumni]);
 
   const filteredAlumni = useMemo(() => {
-    const tab = ALUMNI_TABS.find(t => t.key === alumniTab)!;
-    if (tab.key === 'all') return alumni;
-    return alumni.filter(a => tab.match(((a.role || '') + ' ' + (a.specialization || '')).toLowerCase()));
+    if (alumniTab === 'all') return alumni;
+    return alumni.filter(a => a.alumni_category === alumniTab);
   }, [alumni, alumniTab]);
 
   return (
